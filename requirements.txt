@@ -1,0 +1,11 @@
+# Environment variables
+python-dotenv>=1.0.0
+
+# Terminal UI / Pretty output
+rich>=13.0.0
+
+# Web API (for front-end integration)
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# That's it! We don't need the MCP SDK for the demo
