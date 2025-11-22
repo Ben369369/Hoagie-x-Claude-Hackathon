@@ -1,0 +1,89 @@
+{
+  "mcpServers": {
+    "gmail-helper-safe": {
+      "command": "python",
+      "args": ["server.py"],
+      "description": "Gmail integration for sending emails",
+      "tools": [
+        {
+          "name": "send_email",
+          "description": "Send an email via Gmail to a specified recipient.\n\nParameters:\n- to: Recipient email address\n- subject: Email subject line\n- body: Email message content\n\nThis tool sends emails exactly as specified with no modifications.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "to": {
+                "type": "string",
+                "description": "Recipient email address"
+              },
+              "subject": {
+                "type": "string",
+                "description": "Email subject"
+              },
+              "body": {
+                "type": "string",
+                "description": "Email body content"
+              }
+            },
+            "required": ["to", "subject", "body"]
+          }
+        }
+      ]
+    },
+    "filesystem": {
+      "command": "node",
+      "args": ["filesystem-server.js"],
+      "description": "Safe filesystem operations",
+      "tools": [
+        {
+          "name": "read_file",
+          "description": "Read contents of a file",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "File path to read"
+              }
+            },
+            "required": ["path"]
+          }
+        },
+        {
+          "name": "list_directory",
+          "description": "List files in a directory",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Directory path"
+              }
+            },
+            "required": ["path"]
+          }
+        }
+      ]
+    },
+    "web-browser": {
+      "command": "python",
+      "args": ["browser-server.py"],
+      "description": "Web browsing capabilities",
+      "tools": [
+        {
+          "name": "fetch_url",
+          "description": "Fetch content from a URL",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL to fetch"
+              }
+            },
+            "required": ["url"]
+          }
+        }
+      ]
+    }
+  }
+}
